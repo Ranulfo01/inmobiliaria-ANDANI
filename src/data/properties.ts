@@ -1,4 +1,4 @@
-import type { Property } from "../types/property.ts";
+import type { Property } from "../types/property";
 
 export const properties: Property[] = [
   {
@@ -6,77 +6,100 @@ export const properties: Property[] = [
     title: "Casa Moderna en Zona Norte",
     price: 3500000,
     location: "Monterrey, NL",
-    rooms:2,
-    bathrooms:3,
-    m2const:150,
-    m2terr:120,
+    rooms: 2,
+    bathrooms: 3,
+    m2const: 150,
+    m2terr: 120,
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    parking:3,
-    description: "Hermosa casa moderna con acabados de lujo."
+    parking: 3,
+    description: "Hermosa casa moderna con acabados de lujo.",
+    images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+    ]
   },
   {
     id: 2,
     title: "Casa en Tres Marias",
     price: 12000000,
     location: "Morelia, Mich",
-    rooms:6,
-    bathrooms:7,
-    m2const:250,
-    m2terr:420,
+    rooms: 6,
+    bathrooms: 7,
+    m2const: 250,
+    m2terr: 420,
     image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-    parking:8,
-    description: "Departamento céntrico con vista panorámica."
+    parking: 8,
+    description: "Casa grande en zona exclusiva con vista panorámica.",
+    images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+    ]
   },
   {
     id: 3,
-   title: "Casa de Campo Cabaña",
+    title: "Casa de Campo Cabaña",
     price: 250000,
     location: "Morelia, Mich",
-    rooms:3,
-    bathrooms:5,
-    m2const:120,
-    m2terr:80,
+    rooms: 3,
+    bathrooms: 5,
+    m2const: 120,
+    m2terr: 80,
     image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-    parking:5,
-    description: "Una casa de campo es una vivienda situada en zonas rurales, agrícolas o naturales, diseñada para el descanso, el turismo o como residencia permanente alejada del entorno urbano. Combina elementos tradicionales (piedra, madera) o modernos con amplios espacios exteriores, priorizando la conexión con la naturaleza y un estilo de vida"
+    parking: 5,
+    description:
+      "Una casa de campo situada en zona natural ideal para descanso.",
+    images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+    ]
   },
-   {
-    id: 3,
-   title: "Casa Altozano",
-    price: 5000000,
-    location: "Lazaro Cardenas, Mich",
-    rooms:4,
-    bathrooms:7,
-    m2const:230,
-    m2terr:90,
-    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-    parking:6,
-    description: "Casa en la Playa"
-  },
-   {
+  {
     id: 4,
-   title: "Casa de Playa ",
+    title: "Casa Altozano",
     price: 5000000,
     location: "Lazaro Cardenas, Mich",
-    rooms:4,
-    bathrooms:7,
-    m2const:230,
-    m2terr:90,
+    rooms: 4,
+    bathrooms: 7,
+    m2const: 230,
+    m2terr: 90,
     image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-    parking:6,
-    description: "Casa en la Playa"
+    parking: 6,
+    description: "Casa moderna en zona residencial.",
+    images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+    ]
   },
-   {
-    id: 3,
-   title: "Casa del Lago ",
+  {
+    id: 5,
+    title: "Casa Villa del Pedregal",
     price: 5000000,
-    location: "Lazaro Cardenas, Mich",
-    rooms:4,
-    bathrooms:7,
-    m2const:230,
-    m2terr:90,
+    location: "Morelia, Mich",
+    rooms: 1,
+    bathrooms: 1,
+    m2const: 90,
+    m2terr: 70,
     image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
-    parking:6,
-    description: "Casa en la Playa"
+    parking: 1,
+    description: "Casa moderna en zona residencial.",
+    images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+    ]
   }
 ];
