@@ -22,10 +22,15 @@ import PropertyCard from "../components/PropertyCard"
 
             return(
 
-            <div className="max-w-7xl mx-auto p-6">
-                <h1 className="text-3xl font-bold mb-6">
-                     Todas las propiedades
-                </h1>
+        <div className="max-w-7xl mx-auto p-6">
+            <h1 className="text-3xl font-bold mb-6">
+                Todas las propiedades
+            </h1>
+            <h2 className="text-x1 font-sans mb-6">
+                Descrube la oportunidad de encontrar tu nuevo hogar. Ya se que estes buscando comprar casa o departamento
+                en michoácan, tenemos la propiedad perfecta para ti y tu familia.  Navega por nuestra seccion de Casas y 
+                departamentos, terrenos y locales en las mejores ubicaciones.
+            </h2>
 
 {/* FILTROS */}
 
