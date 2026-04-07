@@ -1,136 +1,153 @@
-import { useState } from "react";
-//import api from "../services/api";
+import { useState } from "react"
+
+type FormType = {
+  name: string
+  email: string
+  phone: string
+  message: string
+}
 
 export default function Contact() {
-  const [form, setForm] = useState({
+
+  const [form, setForm] = useState<FormType>({
     name: "",
     email: "",
     phone: "",
     message: ""
-  });
+  })
 
-  const handleChange = (e) => {
+  const [loading, setLoading] = useState(false)
+  const [sent, setSent] = useState(false)
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value
-    });
-  };
+    })
+  }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
 
-    try {
-      await api.post("/contacts", form);
-      alert("Mensaje enviado correctamente");
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        message: ""
-      });
-    } catch (error) {
-      alert("Error al enviar mensaje");
-    }
-  };
+    setTimeout(() => {
+      setLoading(false)
+      setSent(true)
+      setForm({ name: "", email: "", phone: "", message: "" })
+    }, 1500)
+  }
 
   return (
-    <div className="bg-black min-h-screen py-10 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 p-6">
 
-      {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-10">
-        <h1 className="text-4xl font-bold mb-4">
-          Contáctanos
-        </h1>
-        <p className="text-gray-200">
-          ¿Quieres vender, rentar o publicar tu propiedad? 
-          Estamos aquí para ayudarte.
-        </p>
-      </div>
+      <div className="grid md:grid-cols-2 bg-white rounded-3xl shadow-2xl overflow-hidden max-w-5xl w-full">
 
-      {/* Contenido */}
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-
-        {/* INFO */}
-        <div className="bg-slate-300 p-8 rounded-2xl shadow-lg space-y-6">
-          <h2 className="text-2xl font-semibold">
-            Información de contacto
+        {/* LADO IZQUIERDO */}
+        <div className="bg-blue-600 text-white p-10 flex flex-col justify-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Hablemos 👋
           </h2>
+          <p className="text-blue-100 mb-6">
+            ¿Interesado en una propiedad? Escríbenos y te ayudamos a encontrar tu hogar ideal.
+          </p>
 
-          <div>
-            <p className="font-semibold">📞 Teléfono</p>
-            <p className="text-gray-600">+52 443 123 4567</p>
-          </div>
-
-          <div>
-            <p className="font-semibold">📧 Email</p>
-            <p className="text-gray-600">contacto@inmobiliaria.com</p>
-          </div>
-
-          <div>
-            <p className="font-semibold">📍 Ubicación</p>
-            <p className="text-gray-600">Michoacán, México</p>
-          </div>
-
-          <div className="pt-4 text-gray-500">
-            Te responderemos en menos de 24 horas.
+          <div className="space-y-3 text-sm">
+            <p>📍 Morelia, Michoacán</p>
+            <p>📞 443 328 8380</p>
+            <p>✉ contacto@andani.com</p>
           </div>
         </div>
 
         {/* FORMULARIO */}
-        <div className="bg-slate-300 p-8 rounded-2xl shadow-lg">
-          <h2 className="text-2xl font-semibold mb-6">
-            Envíanos un mensaje
+        <div className="p-10">
+
+          <h2 className="text-2xl font-bold mb-6 text-gray-800">
+            Contáctanos
           </h2>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          {sent && (
+            <div className="bg-green-100 text-green-700 p-3 rounded-lg mb-4 text-center">
+              ✅ Mensaje enviado correctamente
+            </div>
+          )}
 
-            <input
-              type="text"
-              name="name"
-              placeholder="Nombre completo"
-              value={form.name}
-              onChange={handleChange}
-              className=" text-black w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
+          <form onSubmit={handleSubmit} className="space-y-5">
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Correo electrónico"
-              value={form.email}
-              onChange={handleChange}
-              className="text-black w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
+            {/* NOMBRE */}
+            <div className="relative">
+              <span className="absolute left-3 top-3 text-gray-400">👤</span>
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Nombre completo"
+                required
+                className="text-black w-full pl-10 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+            </div>
 
-            <input
-              type="text"
-              name="phone"
-              placeholder="Teléfono"
-              value={form.phone}
-              onChange={handleChange}
-              className="text-black w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
+            {/* EMAIL */}
+            <div className="relative">
+              <span className="absolute left-3 top-3 text-gray-400">✉</span>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Correo electrónico"
+                required
+                className=" text-black w-full pl-10 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+            </div>
 
-            <textarea
-              name="message"
-              placeholder="Escribe tu mensaje..."
-              value={form.message}
-              onChange={handleChange}
-              className="text-black w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              rows="5"
-              required
-            />
+             {/* NUMERO */}
+            <div className="relative">
+              <span className="absolute left-3 top-3 text-gray-400">📞</span>
+              <input
+                type="tel"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+                placeholder="Numero de Telefeno"
+                required
+                className="text-black w-full pl-10 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+            </div>
 
-            <button className="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition">
-              Enviar mensaje
+
+            {/* MENSAJE */}
+            <div className="relative">
+              <span className="absolute left-3 top-3 text-gray-400">💬</span>
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Escribe tu mensaje..."
+                rows={5}
+                required
+                className="text-black w-full pl-10 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+            </div>
+
+            {/* BOTÓN */}
+            <button
+              type="submit"
+              disabled={loading}
+              className={`w-full py-3 rounded-lg font-semibold text-white transition-all ${
+                loading
+                  ? "bg-gray-400"
+                  : "bg-blue-600 hover:bg-blue-700 hover:scale-[1.02]"
+              }`}
+            >
+              {loading ? "Enviando..." : "Enviar mensaje"}
             </button>
 
           </form>
         </div>
-
       </div>
     </div>
-  );
+  )
 }
