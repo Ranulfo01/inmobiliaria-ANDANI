@@ -8,28 +8,40 @@ interface Props {
 const PropertyCard = ({ property }: Props) => {
   return (
     <Link to={`/property/${property.id}`}>
-    <div className="bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:scale-110 transition duration-350">
-      <img
-        src={property.image}
-        alt={property.title}
-        className="h-60 w-full object-cover"
-      />
+      <div className="bg-zinc-900 rounded-xl overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-2xl">
 
-      <div className="p-5" >
-        <h3 className="text-xl font-semibold">{property.title}</h3>
+        {/* IMAGEN */}
+        <img
+          src={property.image}
+          alt={property.title}
+          className="h-48 sm:h-56 md:h-60 w-full object-cover"
+        />
 
-        <p className="text-amber-400 text-lg font-bold mt-2">
-          ${property.price.toLocaleString()}
-        </p>
-        <p className="text-gray-400">{property.location}</p>
-        <div className="flex align-text-top">
-            <p className="text-gray-400 mr-2">{property.rooms} Cuartos</p>
-            <p className="text-gray-400 mr-2">{property.bathrooms} Baños</p>
-            <p className="text-gray-400 mr-2">{property.m2const} m2</p>
-            <p className="text-gray-400 mr-2">{property.parking} Estac.</p>
+        {/* CONTENIDO */}
+        <div className="p-4 sm:p-5">
+          
+          <h3 className="text-lg sm:text-xl font-semibold line-clamp-2">
+            {property.title}
+          </h3>
+
+          <p className="text-amber-400 text-lg sm:text-xl font-bold mt-2">
+            ${property.price.toLocaleString()}
+          </p>
+
+          <p className="text-gray-400 text-sm sm:text-base">
+            {property.location}
+          </p>
+
+          {/* INFO */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 text-xs sm:text-sm text-gray-400">
+            <span>🛏 Cuartos {property.rooms}</span>
+            <span>🛁 Baños {property.bathrooms}</span>
+            <span>📐 Construcción {property.m2const} m²</span>
+            <span>🚗 Estacionamiento {property.parking}</span>
+          </div>
+
         </div>
       </div>
-    </div>
     </Link>
   );
 };

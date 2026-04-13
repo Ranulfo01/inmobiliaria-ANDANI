@@ -11,4 +11,5 @@ export interface Property {
   image: string
   images: string[]
   description: string
+  condition: string
 }

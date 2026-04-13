@@ -19,7 +19,8 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
-    ]
+    ],
+    condition: "nueva"
   },
   {
     id: 2,
@@ -39,7 +40,8 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
-    ]
+    ],
+    condition: "nueva"
   },
   {
     id: 3,
@@ -60,7 +62,8 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
-    ]
+    ],
+    condition: "destacada"
   },
   {
     id: 4,
@@ -80,7 +83,8 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
-    ]
+    ],
+    condition: "destacada"
   },
   {
     id: 5,
@@ -100,6 +104,28 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
       "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
-    ]
+    ],
+    condition: "nueva"
+  },
+  {
+    id: 6,
+    title: "Casa Galaxya Tarimbaro",
+    price: 450000,
+    location: "Tarimabro, Mich",
+    rooms: 2,
+    bathrooms: 2,
+    m2const: 50,
+    m2terr: 60,
+    image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+    parking: 1,
+    description: "Casa en Galaxya Tarimbaro, pie de casa",
+    images: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+    ],
+    condition: "destacada"
   }
 ];

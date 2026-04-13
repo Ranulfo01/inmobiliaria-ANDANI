@@ -1,5 +1,8 @@
 import PropertyCard from "../components/PropertyCard";
+import PropertyCardDest from "../components/PropertyCardDest";
 import { properties } from "../data/properties";
+import  TestimonialCarousel  from "../components/TestimonialCarousel"
+
 
 const Home = () => {
   return (
@@ -16,10 +19,28 @@ const Home = () => {
           Casas destacadas de la semana
         </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {properties.map((property) => (
+            {properties.filter((property)=>property.condition==="destacada").map((property) => (
             <PropertyCard key={property.id} property={property} />
             ))}
           </div>
+      </div>
+
+      <div className="mt-5">
+        <h2 className="text-2xl font-serif text-white mb-2 text-center">
+          Casas Totalmente Nuevas
+        </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {properties.filter((property)=>property.condition==="nueva").map((property) => (
+            <PropertyCardDest key={property.id} property={property} />
+            ))}
+          </div>
+      </div>
+
+      <div className="mt-20">
+        <h2 className="text-2xl font-serif text-white mb-2 text-center">
+          Testimonios de los clientes
+        </h2>
+        <TestimonialCarousel/>
       </div>
 
     </div>
