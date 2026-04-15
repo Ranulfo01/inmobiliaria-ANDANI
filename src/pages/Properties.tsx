@@ -23,10 +23,10 @@ import PropertyCard from "../components/PropertyCard"
             return(
 
         <div className="max-w-7xl mx-auto p-6">
-            <h1 className="text-3xl font-bold mb-6">
+            <h1 className="text-3xl text-textSecondary mb-6">
                 Todas las propiedades
             </h1>
-            <h2 className="text-x1 font-sans mb-6">
+            <h2 className="text-x1 text-textSecondary mb-6">
                 Descrube la oportunidad de encontrar tu nuevo hogar. Ya se que estes buscando comprar casa o departamento
                 en michoácan, tenemos la propiedad perfecta para ti y tu familia.  Navega por nuestra seccion de Casas y 
                 departamentos, terrenos y locales en las mejores ubicaciones.
@@ -39,7 +39,7 @@ import PropertyCard from "../components/PropertyCard"
              <input
                 type="text"
                 placeholder="Ciudad"
-                className="border p-3 rounded text-black"
+                className="border p-3 rounded text-textMain"
                 value={city}
                 onChange={(e)=>setCity(e.target.value)}
             />
@@ -47,13 +47,13 @@ import PropertyCard from "../components/PropertyCard"
             <input
                 type="number"
                 placeholder="Precio mínimo"
-                className="border p-3 rounded text-black"
+                className="border p-3 rounded text-textSecondary"
                 value={minPrice}
              onChange={(e)=>setMinPrice(e.target.value)}
             />
 
             <select
-                className="border p-3 rounded text-black"
+                className="border p-3 rounded text-textSecondary"
                 value={bedrooms}
                 onChange={(e)=>setBedrooms(e.target.value)}
             >

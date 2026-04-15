@@ -40,9 +40,9 @@ export default function TestimonialCarousel() {
   ];
 
   return (
-    <div className="bg-gray-400 py-16 rounded-lg">
+    <div className="bg-fondCard py-16 rounded-lg">
 
-      <h2 className="text-3xl font-bold text-center mb-10">
+      <h2 className="text-3xl text-primary text-center mb-10">
         Lo que dicen nuestros clientes de Andani Bienes Raices
       </h2>
 
@@ -58,17 +58,17 @@ export default function TestimonialCarousel() {
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
 
-              <div className="bg-slate-200 p-8 rounded-2xl shadow-lg text-center">
+              <div className="bg-fondCard2 p-8 rounded-2xl shadow-lg text-center">
 
-                <p className="text-gray-600 mb-4 italic">
+                <p className="text-primary mb-4 italic">
                   "{item.text}"
                 </p>
 
-                <h3 className="font-semibold text-lg">
+                <h3 className="from-neutral-400 -text-lg">
                   {item.name}
                 </h3>
 
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-primary">
                   {item.role}
                 </span>
 

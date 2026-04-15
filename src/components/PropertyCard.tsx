@@ -8,7 +8,7 @@ interface Props {
 const PropertyCard = ({ property }: Props) => {
   return (
     <Link to={`/property/${property.id}`}>
-      <div className="bg-zinc-900 rounded-xl overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-2xl">
+      <div className="bg-fondCard rounded-xl overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-2xl">
 
         {/* IMAGEN */}
         <img
@@ -28,17 +28,38 @@ const PropertyCard = ({ property }: Props) => {
             ${property.price.toLocaleString()}
           </p>
 
-          <p className="text-gray-400 text-sm sm:text-base">
+          <p className="text-primary text-sm sm:text-base">
             {property.location}
           </p>
 
           {/* INFO */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 text-xs sm:text-sm text-gray-400">
-            <span>🛏 Cuartos {property.rooms}</span>
-            <span>🛁 Baños {property.bathrooms}</span>
-            <span>📐 Construcción {property.m2const} m²</span>
-            <span>🚗 Estacionamiento {property.parking}</span>
-          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+
+  <div className="bg-fondCard2 p-3 rounded-lg text-center">
+    <p className="text-lg">🛏</p>
+    <p className="text-xs text-gray-400">Cuartos</p>
+    <p className="font-semibold">{property.rooms}</p>
+  </div>
+
+  <div className="bg-fondCard2 p-3 rounded-lg text-center">
+    <p className="text-lg">🛁</p>
+    <p className="text-xs text-gray-400">Baños</p>
+    <p className="font-semibold">{property.bathrooms}</p>
+  </div>
+
+  <div className="bg-fondCard2 p-3 rounded-lg text-center">
+    <p className="text-lg">📐</p>
+    <p className="text-xs text-gray-400">Constr.</p>
+    <p className="font-semibold">{property.m2const} m²</p>
+  </div>
+
+  <div className="bg-fondCard2 p-3 rounded-lg text-center">
+    <p className="text-lg">🚗</p>
+    <p className="text-xs text-gray-400">Estac.</p>
+    <p className="font-semibold">{property.parking}</p>
+  </div>
+
+</div>
 
         </div>
       </div>

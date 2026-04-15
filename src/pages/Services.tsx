@@ -31,7 +31,7 @@ export default function Services() {
 
   return (
     <div className="p-8">
-      <h1 className="text-3xl font-bold text-center mb-10">
+      <h1 className="text-3xl text-textSecondary text-center mb-10">
         Nuestros Servicios
       </h1>
 
@@ -42,11 +42,11 @@ export default function Services() {
             className="p-6 shadow-lg rounded-2xl hover:shadow-2xl transition">
             <div className="text-4xl mb-4">{service.icon}</div>
 
-            <h2 className="text-xl font-semibold mb-2">
+            <h2 className="text-xl text-textSecondary mb-2">
               {service.title}
             </h2>
 
-            <p className="text-gray-600">
+            <p className="text-textSecondary">
               {service.description}
             </p>
 

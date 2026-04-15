@@ -6,7 +6,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-black border-b border-zinc-800">
+    <nav className="bg-[#3d3b3a] border-b border-zinc-800">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* LOGO */}
@@ -18,7 +18,7 @@ export default function Navbar() {
           />
           <Link
             to="/"
-            className="text-xl md:text-2xl font-bold text-amber-400 tracking-widest"
+            className="text-xl md:text-2xl font-bold text-[#F2F2F2] tracking-widest"
           >
             ANDANI
           </Link>
@@ -26,14 +26,14 @@ export default function Navbar() {
 
         {/* BOTÓN HAMBURGUESA */}
         <button
-          className="md:hidden text-white text-2xl"
+          className="md:hidden text-primary text-2xl"
           onClick={() => setOpen(!open)}
         >
           ☰
         </button>
 
         {/* MENÚ DESKTOP */}
-        <div className="hidden md:flex space-x-6 text-white">
+        <div className="hidden md:flex space-x-6 text-[#F2F2F2]">
           <Link to="/" className="hover:text-amber-400 transition">
             Inicio
           </Link>
@@ -51,7 +51,7 @@ export default function Navbar() {
 
       {/* MENÚ MÓVIL */}
       {open && (
-        <div className="md:hidden bg-black px-6 pb-4 space-y-3 text-white">
+        <div className="md:hidden bg-[#555555] px-6 pb-4 space-y-3 text-white">
           <Link to="/" onClick={() => setOpen(false)} className="block hover:text-amber-400">
             Inicio
           </Link>

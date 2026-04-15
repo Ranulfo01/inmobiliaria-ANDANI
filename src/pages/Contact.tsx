@@ -45,7 +45,7 @@ export default function Contact() {
       <div className="grid md:grid-cols-2 bg-white rounded-3xl shadow-2xl overflow-hidden max-w-5xl w-full">
 
         {/* LADO IZQUIERDO */}
-        <div className="bg-blue-600 text-white p-10 flex flex-col justify-center">
+        <div className="bg-fondCard text-white p-10 flex flex-col justify-center">
           <h2 className="text-3xl font-bold mb-4">
             Hablemos 👋
           </h2>
@@ -136,10 +136,10 @@ export default function Contact() {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full py-3 rounded-lg font-semibold text-white transition-all ${
+              className={`w-full py-3 rounded-lg bg-fondCard text-white transition-all ${
                 loading
                   ? "bg-gray-400"
-                  : "bg-blue-600 hover:bg-blue-700 hover:scale-[1.02]"
+                  : "bg-blue-600 hover:bg-fondCard2 hover:scale-[1.02]"
               }`}
             >
               {loading ? "Enviando..." : "Enviar mensaje"}

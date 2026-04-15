@@ -8,7 +8,7 @@ interface Props {
 const PropertyCardDest = ({ property }: Props) => {
   return (
     <Link to={`/property/${property.id}`}>
-    <div className="bg-zinc-900 rounded-xl overflow-hidden shadow-lg hover:scale-110 transition duration-350">
+    <div className="bg-[#3d3b3a] rounded-xl overflow-hidden shadow-lg hover:scale-110 transition duration-350">
       <img
         src={property.image}
         alt={property.title}

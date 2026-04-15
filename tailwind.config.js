@@ -5,7 +5,16 @@ export default {
     "./src/**/*.{ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#f8f5fz",     // fondo principal 
+        textMain: "#ffffff",    // texto principal
+        textSecondary: "#373553", // negro-gris claro
+        accent: "#F2DB66",      // dorado opcional
+        fondCard: "#3d3b3a", //gris medio 
+        fondCard2: "#555555"   //gris bajito
+      },
+    },
   },
   plugins: [],
 }

@@ -2,23 +2,23 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 mt-10">
+    <footer className="bg-[#3d3b3a] text-gray-300 mt-10">
       
       <div className="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-8">
 
         {/* LOGO / EMPRESA */}
         <div>
-          <h2 className="text-xl font-bold text-white mb-3">
+          <h2 className="text-xl font-bold text-primary mb-3">
             Andani Bienes Raices
           </h2>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-primary">
             Encuentra la casa de tus sueños o vende tu propiedad con nosotros.
           </p>
         </div>
 
         {/* NAVEGACIÓN */}
         <div>
-          <h3 className="text-white font-semibold mb-3">Navegación</h3>
+          <h3 className="text-primary font-semibold mb-3">Navegación</h3>
           <ul className="space-y-2 text-sm">
             <li><Link to="/" className="hover:text-white">Inicio</Link></li>
             <li><Link to="/services" className="hover:text-white">Servicios</Link></li>
@@ -28,7 +28,7 @@ export default function Footer() {
 
         {/* SERVICIOS */}
         <div>
-          <h3 className="text-white font-semibold mb-3">Servicios</h3>
+          <h3 className="text-primary font-semibold mb-3">Servicios</h3>
           <ul className="space-y-2 text-sm">
             <li>Venta de propiedades</li>
             <li>Renta de propiedades</li>
@@ -38,7 +38,7 @@ export default function Footer() {
 
         {/* CONTACTO */}
         <div>
-          <h3 className="text-white font-semibold mb-3">Contacto</h3>
+          <h3 className="text-primary font-semibold mb-3">Contacto</h3>
           <ul className="space-y-2 text-sm">
             <li>📍 Michoacán, México</li>
             <li>📞 +52 443 328 8380</li>

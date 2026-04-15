@@ -17,13 +17,13 @@ export default function PropertyDetail() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
 
       {/* HEADER */}
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-gray-800 text-white p-4 sm:p-6 rounded gap-2">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center bg-primary text-textMain p-4 sm:p-6 rounded gap-2">
 
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
+        <h1 className="text-xl sm:text-2xl md:text-3xl text-fondCard">
           {property.title}
         </h1>
 
-        <h2 className="text-xl sm:text-2xl font-semibold text-yellow-400">
+        <h2 className="text-xl sm:text-2xl font-semibold text-amber-400">
           ${property.price.toLocaleString()}
         </h2>
 
@@ -39,22 +39,22 @@ export default function PropertyDetail() {
 
         {/* DESCRIPCIÓN */}
         <div>
-          <h2 className="text-lg sm:text-xl font-bold mb-4">
+          <h2 className="text-lg sm:text-xl text-textSecondary mb-4">
             ¿Por qué comprar esta casa?
           </h2>
 
-          <p className="text-gray-400 leading-relaxed text-justify text-sm sm:text-base">
+          <p className="text-textSecondary leading-relaxed text-justify text-sm sm:text-base">
             {property.description}
           </p>
         </div>
 
         {/* CARACTERISTICAS */}
         <div>
-          <h2 className="text-lg sm:text-xl font-bold mb-4">
+          <h2 className="text-lg sm:text-xl text-textSecondary mb-4">
             Características
           </h2>
 
-          <ul className="grid grid-cols-2 gap-2 text-sm sm:text-base text-gray-300">
+          <ul className="grid grid-cols-2 gap-2 text-sm sm:text-base text-textSecondary">
 
             <li>✔ {property.rooms} Cuartos</li>
             <li>✔ {property.bathrooms} Baños</li>
@@ -72,15 +72,15 @@ export default function PropertyDetail() {
       {/* CONTACTO */}
       <div className="mt-10 border-t border-gray-700 pt-6">
 
-        <h3 className="font-bold text-lg mb-2">
+        <h3 className="text-textSecondary text-lg mb-2">
           ¿Te interesó esta casa?
         </h3>
 
-        <p className="text-gray-400 mb-4">
+        <p className="text-textSecondary mb-4">
           Contáctanos para más información
         </p>
 
-        <div className="space-y-2 text-sm sm:text-base">
+        <div className="space-y-2 text-sm sm:text-base text-textSecondary">
           <p>📞 443 328 8380</p>
           <p>✉ carosolorio6@gmail.com</p>
         </div>
