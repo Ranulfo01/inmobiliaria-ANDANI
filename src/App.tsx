@@ -6,6 +6,12 @@ import Properties from "./pages/Properties"
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer"
+import CreateProperty from "./pages/CreateProperty";
+import Login from "./pages/Login";
+import AdminPanel from "./pages/AdminPanel";
+import EditProperty from "./pages/EditProperty";
+
+import AdminRoute from "./routes/AdminRoute";
 
 function App() {
   return (
@@ -14,10 +20,15 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/property/:id" element={<PropertyDetail />} />
         <Route path="/properties" element={<Properties />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/create" element={<CreateProperty />} />
+        <Route path="/admin" element={ <AdminRoute> <AdminPanel /> </AdminRoute> }/>
+        <Route path="/edit/:id" element={<EditProperty />} />
+        
       </Routes>
     <div>
       <Footer/>

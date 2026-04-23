@@ -1,9 +1,18 @@
-//barra de navegacion de la aplicaión Principal.
-import { Link } from "react-router-dom";
+// barra de navegación de la aplicación Principal
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem("user") || "null");
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/");
+  };
 
   return (
     <nav className="bg-[#3d3b3a] border-b border-zinc-800">
@@ -33,37 +42,73 @@ export default function Navbar() {
         </button>
 
         {/* MENÚ DESKTOP */}
-        <div className="hidden md:flex space-x-6 text-[#F2F2F2]">
-          <Link to="/" className="hover:text-amber-400 transition">
-            Inicio
-          </Link>
-          <Link to="/properties" className="hover:text-amber-400 transition">
-            Propiedades
-          </Link>
-          <Link to="/services" className="hover:text-amber-400 transition">
-            Servicios
-          </Link>
-          <Link to="/contact" className="hover:text-amber-400 transition">
-            Contacto
-          </Link>
+        <div className="hidden md:flex space-x-6 text-[#F2F2F2] items-center">
+
+          <Link to="/" className="hover:text-amber-400">Inicio</Link>
+          <Link to="/properties" className="hover:text-amber-400">Propiedades</Link>
+          <Link to="/services" className="hover:text-amber-400">Servicios</Link>
+          <Link to="/contact" className="hover:text-amber-400">Contacto</Link>
+
+          {/* 🔐 LOGIN */}
+          {!user && (
+            <Link to="/login" className="hover:text-amber-400">
+              Login
+            </Link>
+          )}
+
+          {/* 👑 ADMIN */}
+          {user?.role === "admin" && (
+            <Link to="/admin" className="text-yellow-400 font-semibold">
+              Admin
+            </Link>
+          )}
+
+          {/* 🚪 LOGOUT */}
+          {user && (
+            <button
+              onClick={handleLogout}
+              className="bg-red-500 px-3 py-1 rounded hover:bg-red-600"
+            >
+              Logout
+            </button>
+          )}
+
         </div>
       </div>
 
       {/* MENÚ MÓVIL */}
       {open && (
         <div className="md:hidden bg-[#555555] px-6 pb-4 space-y-3 text-white">
-          <Link to="/" onClick={() => setOpen(false)} className="block hover:text-amber-400">
-            Inicio
-          </Link>
-          <Link to="/properties" onClick={() => setOpen(false)} className="block hover:text-amber-400">
-            Propiedades
-          </Link>
-          <Link to="/services" onClick={() => setOpen(false)} className="block hover:text-amber-400">
-            Servicios
-          </Link>
-          <Link to="/contact" onClick={() => setOpen(false)} className="block hover:text-amber-400">
-            Contacto
-          </Link>
+
+          <Link to="/" onClick={() => setOpen(false)}>Inicio</Link>
+          <Link to="/properties" onClick={() => setOpen(false)}>Propiedades</Link>
+          <Link to="/services" onClick={() => setOpen(false)}>Servicios</Link>
+          <Link to="/contact" onClick={() => setOpen(false)}>Contacto</Link>
+
+          {!user && (
+            <Link to="/login" onClick={() => setOpen(false)}>
+              Login
+            </Link>
+          )}
+
+          {user?.role === "admin" && (
+            <Link to="/admin" onClick={() => setOpen(false)}>
+              Admin
+            </Link>
+          )}
+
+          {user && (
+            <button
+              onClick={() => {
+                handleLogout();
+                setOpen(false);
+              }}
+              className="bg-red-500 px-3 py-1 rounded w-full text-left"
+            >
+              Logout
+            </button>
+          )}
+
         </div>
       )}
     </nav>

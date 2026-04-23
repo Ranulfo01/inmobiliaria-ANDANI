@@ -3,34 +3,54 @@ import { Link } from "react-router-dom";
 
 interface Props {
   property: Property;
+  onDelete?: (id: string) => void; 
 }
 
-const PropertyCardDest = ({ property }: Props) => {
+const PropertyCardDest = ({ property, onDelete }: Props) => {
   return (
-    <Link to={`/property/${property.id}`}>
-    <div className="bg-[#3d3b3a] rounded-xl overflow-hidden shadow-lg hover:scale-110 transition duration-350">
-      <img
-        src={property.image}
-        alt={property.title}
-        className="h-60 w-full object-cover"
-      />
+    <div>
+      {/* CARD CLICKABLE */}
+      <Link to={`/property/${property._id}`}>
+        <div className="bg-[#3d3b3a] rounded-xl overflow-hidden shadow-lg hover:scale-110 transition duration-300">
 
-      <div className="p-5" >
-        <h3 className="text-xl font-semibold">{property.title}</h3>
+          <img
+            src={property.images?.[0]}
+            alt={property.title}
+            className="h-60 w-full object-cover"
+          />
 
-        <p className="text-amber-400 text-lg font-bold mt-2">
-          ${property.price.toLocaleString()}
-        </p>
-        <p className="text-gray-400">{property.location}</p>
-        <div className="flex align-text-top">
-            <p className="text-gray-400 mr-2">{property.rooms} Cuartos</p>
-            <p className="text-gray-400 mr-2">{property.bathrooms} Baños</p>
-            <p className="text-gray-400 mr-2">{property.m2const} m2</p>
-            <p className="text-gray-400 mr-2">{property.parking} Estac.</p>
+          <div className="p-5">
+            <h3 className="text-xl font-semibold">{property.title}</h3>
+
+            <p className="text-amber-400 text-lg font-bold mt-2">
+              $
+              {property.price
+                ? Number(property.price).toLocaleString()
+                : "Sin precio"}
+            </p>
+
+            <p className="text-gray-400">{property.location}</p>
+
+            <div className="flex flex-wrap gap-2 mt-2 text-gray-400 text-sm">
+              <p>{property.rooms} Cuartos</p>
+              <p>{property.bathrooms} Baños</p>
+              <p>{property.m2const} m²</p>
+              <p>{property.parking} Estac.</p>
+            </div>
+          </div>
         </div>
-      </div>
+      </Link>
+
+      {/* 🔥 BOTÓN FUERA DEL LINK */}
+      {onDelete && (
+        <button
+          onClick={() => onDelete(property._id)}
+          className="bg-red-500 text-white p-2 rounded mt-3 w-full hover:bg-red-600"
+        >
+          Eliminar
+        </button>
+      )}
     </div>
-    </Link>
   );
 };
 
