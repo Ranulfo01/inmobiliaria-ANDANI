@@ -55,8 +55,9 @@ export default function PropertyDetail() {
               const newIndex =
                 (currentIndex - 1 + property.images.length) %
                 property.images.length;
+
               setCurrentIndex(newIndex);
-              setActiveImage(property.images[newIndex]);
+              setActiveImage(property.images[newIndex]?.url);
             }}
             className="absolute left-5 text-white text-4xl"
           >
@@ -74,8 +75,9 @@ export default function PropertyDetail() {
             onClick={() => {
               const newIndex =
                 (currentIndex + 1) % property.images.length;
+
               setCurrentIndex(newIndex);
-              setActiveImage(property.images[newIndex]);
+              setActiveImage(property.images[newIndex]?.url);
             }}
             className="absolute right-5 text-white text-4xl"
           >
@@ -106,14 +108,14 @@ export default function PropertyDetail() {
 
         </div>
 
-        {/*  GALERÍA */}
+        {/* GALERÍA */}
         <div className="mt-6">
 
           {/* IMAGEN PRINCIPAL */}
           <div className="w-full h-[250px] sm:h-[350px] md:h-[450px] overflow-hidden rounded-xl shadow">
             <img
-              src={property.images?.[currentIndex] || "https://via.placeholder.com/800"}
-              onClick={() => setActiveImage(property.images[currentIndex])}
+              src={property.images?.[currentIndex]?.url || "https://via.placeholder.com/800"}
+              onClick={() => setActiveImage(property.images[currentIndex]?.url)}
               className="w-full h-full object-cover cursor-pointer transition"
             />
           </div>
@@ -124,10 +126,10 @@ export default function PropertyDetail() {
             {property.images?.map((img, index) => (
               <img
                 key={index}
-                src={img}
+                src={img.url}
                 onClick={() => {
                   setCurrentIndex(index);
-                  setActiveImage(img);
+                  setActiveImage(img.url);
                 }}
                 className={`h-20 w-28 md:w-full object-cover rounded-lg cursor-pointer border-2 transition
                   ${currentIndex === index ? "border-amber-800" : "border-transparent"}
@@ -143,12 +145,12 @@ export default function PropertyDetail() {
         <div className="grid md:grid-cols-2 gap-10 mt-10">
 
           {/* DESCRIPCIÓN */}
-          <div className="bg-[#2d2d2d] rounded-lg text-center">
+          <div className="bg-[#2d2d2d] rounded-lg text-center p-4">
             <h2 className="text-xl font-semibold mb-3">
-                Descripción 
+              Descripción
             </h2>
 
-            <p className="text-gray-3 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               {property.description || "Sin descripción"}
             </p>
           </div>

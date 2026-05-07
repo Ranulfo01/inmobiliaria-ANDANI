@@ -12,7 +12,7 @@ const PropertyCardDest = ({ property }: Props) => {
         <div className="bg-[#3d3b3a] rounded-xl overflow-hidden shadow-lg hover:scale-110 transition duration-300">
 
           <img
-            src={property.images?.[0]}
+            src={property.images?.[0]?.url || "/no-image.jpg"}
             alt={property.title}
             className="h-60 w-full object-cover"
           />
