@@ -3,13 +3,11 @@ import { Link } from "react-router-dom";
 
 interface Props {
   property: Property;
-  onDelete?: (id: string) => void; 
 }
 
-const PropertyCardDest = ({ property, onDelete }: Props) => {
+const PropertyCardDest = ({ property }: Props) => {
   return (
     <div>
-      {/* CARD CLICKABLE */}
       <Link to={`/property/${property._id}`}>
         <div className="bg-[#3d3b3a] rounded-xl overflow-hidden shadow-lg hover:scale-110 transition duration-300">
 
@@ -38,18 +36,9 @@ const PropertyCardDest = ({ property, onDelete }: Props) => {
               <p>{property.parking} Estac.</p>
             </div>
           </div>
+
         </div>
       </Link>
-
-      {/* 🔥 BOTÓN FUERA DEL LINK */}
-      {onDelete && (
-        <button
-          onClick={() => onDelete(property._id)}
-          className="bg-red-500 text-white p-2 rounded mt-3 w-full hover:bg-red-600"
-        >
-          Eliminar
-        </button>
-      )}
     </div>
   );
 };

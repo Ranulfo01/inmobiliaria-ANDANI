@@ -4,13 +4,18 @@ import TestimonialCarousel from "../components/TestimonialCarousel";
 import { useEffect, useState } from "react";
 import { getProperties } from "../services/propertyService";
 
+const API = import.meta.env.VITE_API_URL;
+
 // TIPADO
 interface Property {
   _id: string;
   title: string;
   price: number;
   location: string;
-  images: string[];
+  images: {
+    url: string;
+    public_id: string;
+  }[];
   status: string;
   rooms: number;
   bathrooms: number;
@@ -18,11 +23,15 @@ interface Property {
   parking: number;
 }
 
+
+
 const Home = () => {
 
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
 
+         
+         
   useEffect(() => {
     getProperties()
       .then((data) => {
@@ -37,11 +46,12 @@ const Home = () => {
 
   //  DELETE
   const handleDelete = async (id: string) => {
+    
     const confirmDelete = confirm("¿Eliminar propiedad?");
     if (!confirmDelete) return;
 
     try {
-      await fetch(`http://localhost:5000/api/properties/${id}`, {
+      await fetch(`${API}/properties/${id}`, {
         method: "DELETE"
       });
 
@@ -102,7 +112,7 @@ const Home = () => {
           {nuevas.map((property) => (
             <PropertyCardDest
               key={property._id}
-              property={property} onDelete={handleDelete} //
+              property={property}
             />
           ))}
         </div>

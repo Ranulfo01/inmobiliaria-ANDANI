@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const API = import.meta.env.VITE_API_URL
+
 export default function CreateProperty() {
 
   const [form, setForm] = useState({
@@ -61,7 +63,7 @@ export default function CreateProperty() {
       const token = localStorage.getItem("token");
           //console.log(token);
 
-      const res = await fetch("http://localhost:5000/api/properties", {
+      const res = await fetch(`${API}/properties`, {
         method: "POST",
         headers:{
           Authorization: `Bearer ${token}`

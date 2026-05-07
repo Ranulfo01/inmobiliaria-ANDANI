@@ -1,7 +1,9 @@
 import type { Property } from "../types/property";
 
+const API = import.meta.env.VITE_API_URL;
+
 export const getProperties = async (): Promise<Property[]> => {
-  const res = await fetch("http://localhost:5000/api/properties");
+  const res = await fetch(`${API}/properties`);
   const data = await res.json();
   return data;
 };

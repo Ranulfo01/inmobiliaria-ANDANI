@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import type { Property } from "../types/property";
 
+const API = import.meta.env.VITE_API_URL;
+
 export default function PropertyDetail() {
 
   const { id } = useParams();
@@ -13,7 +15,7 @@ export default function PropertyDetail() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/properties/${id}`)
+    fetch(`${API}/properties/${id}`)
       .then(res => res.json())
       .then(data => {
         setProperty(data);
@@ -26,16 +28,16 @@ export default function PropertyDetail() {
   }, [id]);
 
   if (loading) {
-    return <p className="text-center mt-10">Cargando propiedad...</p>;
+    return <p className="text-center mt-10 text-gray-400">Cargando propiedad...</p>;
   }
 
   if (!property) {
-    return <p className="text-center mt-10">Propiedad no encontrada</p>;
+    return <p className="text-center mt-10 text-gray-400">Propiedad no encontrada</p>;
   }
 
   return (
     <>
-      {/*  MODAL */}
+      {/* MODAL */}
       {activeImage && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
 
@@ -84,80 +86,119 @@ export default function PropertyDetail() {
       )}
 
       {/* CONTENIDO */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 text-white ">
 
         {/* HEADER */}
-        <div className="flex flex-col sm:flex-row justify-between items-center bg-gray-800 text-white p-4 sm:p-6 rounded gap-2">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-[#2d2d2d] p-5 rounded-xl gap-3 shadow">
 
-          <h1 className="text-xl sm:text-2xl font-bold">
-            {property.title}
-          </h1>
+          <div>
+            <h1 className="text-2xl md:text-3xl font-bold">
+              {property.title}
+            </h1>
+            <p className="text-gray-400 text-sm mt-1">
+              📍 {property.location}
+            </p>
+          </div>
 
-          <h2 className="text-xl sm:text-2xl text-yellow-400">
+          <h2 className="text-2xl md:text-3xl text-amber-400 font-semibold">
             ${property.price.toLocaleString()}
           </h2>
 
         </div>
 
-        {/* IMÁGENES */}
-       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-6">
+        {/*  GALERÍA */}
+        <div className="mt-6">
 
-  {/* IMAGEN GRANDE */}
-            <div className="md:col-span-2">
+          {/* IMAGEN PRINCIPAL */}
+          <div className="w-full h-[250px] sm:h-[350px] md:h-[450px] overflow-hidden rounded-xl shadow">
+            <img
+              src={property.images?.[currentIndex] || "https://via.placeholder.com/800"}
+              onClick={() => setActiveImage(property.images[currentIndex])}
+              className="w-full h-full object-cover cursor-pointer transition"
+            />
+          </div>
+
+          {/* MINIATURAS */}
+          <div className="mt-3 flex md:grid md:grid-cols-5 gap-3 overflow-x-auto md:overflow-visible pb-2">
+
+            {property.images?.map((img, index) => (
               <img
-                src={property.images?.[0] || "https://via.placeholder.com/800"}
+                key={index}
+                src={img}
                 onClick={() => {
-                  setActiveImage(property.images[0]);
-                  setCurrentIndex(0);
+                  setCurrentIndex(index);
+                  setActiveImage(img);
                 }}
-                className="w-full h-[300px] md:h-[420px] object-cover rounded-xl cursor-pointer"
+                className={`h-20 w-28 md:w-full object-cover rounded-lg cursor-pointer border-2 transition
+                  ${currentIndex === index ? "border-amber-800" : "border-transparent"}
+                `}
               />
-            </div>
-
-            {/* MINIATURAS */}
-            <div className="grid grid-cols-2 grid-rows-2 gap-3 h-[300px] md:h-[420px]">
-
-              {property.images?.slice(1, 5).map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  onClick={() => {
-                    setActiveImage(img);
-                    setCurrentIndex(index + 1);
-                  }}
-                  className="w-full h-full object-cover rounded-xl cursor-pointer hover:scale-105 transition"
-                />
-              ))}
-
-            </div>
+            ))}
 
           </div>
 
-        {/* INFO */}
-        <div className="grid md:grid-cols-2 gap-8 mt-10">
+        </div>
 
-          <div>
-            <h2 className="text-xl font-bold mb-4">
-              Descripción
+        {/* INFO */}
+        <div className="grid md:grid-cols-2 gap-10 mt-10">
+
+          {/* DESCRIPCIÓN */}
+          <div className="bg-[#2d2d2d] rounded-lg text-center">
+            <h2 className="text-xl font-semibold mb-3">
+                Descripción 
             </h2>
 
-            <p className="text-gray-400">
+            <p className="text-gray-3 leading-relaxed">
               {property.description || "Sin descripción"}
             </p>
           </div>
 
+          {/* CARACTERÍSTICAS */}
           <div>
-            <h2 className="text-xl font-bold mb-4">
+            <h2 className="text-xl font-semibold mb-3">
               Características
             </h2>
 
-            <ul className="space-y-2 text-gray-300">
-              <li>✔ {property.rooms} Cuartos</li>
-              <li>✔ {property.bathrooms} Baños</li>
-              <li>✔ {property.m2const} m² construcción</li>
-              <li>✔ {property.m2terr || "-"} m² terreno</li>
-              <li>✔ {property.parking} estacionamientos</li>
-            </ul>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+
+              <div className="bg-[#2d2d2d] p-4 rounded-lg text-center">
+                🛏
+                <p className="font-bold text-lg">{property.rooms}</p>
+                <span className="text-sm text-gray-400">Cuartos</span>
+              </div>
+
+              <div className="bg-[#2d2d2d] p-4 rounded-lg text-center">
+                🛁
+                <p className="font-bold text-lg">{property.bathrooms}</p>
+                <span className="text-sm text-gray-400">Baños</span>
+              </div>
+
+              <div className="bg-[#2d2d2d] p-4 rounded-lg text-center">
+                🚗
+                <p className="font-bold text-lg">{property.parking}</p>
+                <span className="text-sm text-gray-400">Parking</span>
+              </div>
+
+              <div className="bg-[#2d2d2d] p-4 rounded-lg text-center">
+                📐
+                <p className="font-bold text-lg">{property.m2const} m²</p>
+                <span className="text-sm text-gray-400">Construcción</span>
+              </div>
+
+              <div className="bg-[#2d2d2d] p-4 rounded-lg text-center">
+                🌳
+                <p className="font-bold text-lg">{property.m2terr || "-"}</p>
+                <span className="text-sm text-gray-400">Terreno</span>
+              </div>
+
+              <div className="bg-[#2d2d2d] p-4 rounded-lg text-center">
+                🏷
+                <p className="font-bold text-lg capitalize">{property.status}</p>
+                <span className="text-sm text-gray-400">Estado</span>
+              </div>
+
+            </div>
+
           </div>
 
         </div>
