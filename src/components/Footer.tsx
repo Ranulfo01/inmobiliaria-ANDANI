@@ -12,7 +12,10 @@ export default function Footer() {
             Andani Bienes Raices
           </h2>
           <p className="text-sm text-primary">
-            Encuentra la casa de tus sueños o vende tu propiedad con nosotros.
+            Encuentra la casa de tus sueños. <br/> 
+            ¿Quieres vender tu propiedad?, <br/>
+            Nosotros te acompañamos en todo el proceso. <br/>
+             ¡No estas solo!.
           </p>
         </div>
 
