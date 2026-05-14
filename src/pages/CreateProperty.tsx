@@ -127,29 +127,29 @@ export default function CreateProperty() {
 
       <form onSubmit={handleSubmit} className="grid gap-4">
 
-        <input name="title" placeholder="Título" value={form.title} onChange={handleChange} className="p-3 rounded text-black"/>
+        <input name="title" placeholder="Título" value={form.title} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900"/>
 
-        <input name="price" type="number" placeholder="Precio" value={form.price} onChange={handleChange} className="p-3 rounded text-black"/>
+        <input name="price" type="number" placeholder="Precio" value={form.price} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-700"/>
 
-        <input name="location" placeholder="Ubicación" value={form.location} onChange={handleChange} className="p-3 rounded text-black"/>
+        <input name="location" placeholder="Ubicación" value={form.location} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-700"/>
 
-        <input name="rooms" type="number" placeholder="Cuartos" value={form.rooms} onChange={handleChange} className="p-3 rounded text-black"/>
+        <input name="rooms" type="number" placeholder="Cuartos" value={form.rooms} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-700"/>
 
-        <input name="bathrooms" type="number" placeholder="Baños" value={form.bathrooms} onChange={handleChange} className="p-3 rounded text-black"/>
+        <input name="bathrooms" type="number" placeholder="Baños" value={form.bathrooms} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-700"/>
 
-        <input name="m2const" type="number" placeholder="m² construcción" value={form.m2const} onChange={handleChange} className="p-3 rounded text-black"/>
+        <input name="m2const" type="number" placeholder="m² construcción" value={form.m2const} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-700"/>
 
-        <input name="m2terr" type="number" placeholder="m² terreno" value={form.m2terr} onChange={handleChange} className="p-3 rounded text-black"/>
+        <input name="m2terr" type="number" placeholder="m² terreno" value={form.m2terr} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-700"/>
 
-        <input name="parking" type="number" placeholder="Estacionamientos" value={form.parking} onChange={handleChange} className="p-3 rounded text-black"/>
+        <input name="parking" type="number" placeholder="Estacionamientos" value={form.parking} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-700"/>
 
-        <select name="status" value={form.status} onChange={handleChange} className="p-3 rounded text-black">
+        <select name="status" value={form.status} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-700">
           <option value="nueva">Nueva</option>
           <option value="usada">Usada</option>
           <option value="destacada">Destacada</option>
         </select>
 
-        <textarea name="description" placeholder="Descripción" value={form.description} onChange={handleChange} className="p-3 rounded text-black"/>
+        <textarea name="description" placeholder="Descripción" value={form.description} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-700"/>
 
         {/* IMÁGENES */}
       <input type="file" multiple name="images" onChange={handleImageChange} />
