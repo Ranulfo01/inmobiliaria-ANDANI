@@ -166,28 +166,28 @@ export default function EditProperty() {
         Editar Propiedad
       </h1>
 
-      <form onSubmit={handleSubmit} className="grid gap-6">
+      <form onSubmit={handleSubmit} className="grid gap-6 p-8 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900">
 
         {/* FORM */}
         <div className="grid md:grid-cols-2 gap-4">
 
-          <input name="title" value={form.title} onChange={handleChange} placeholder="Título" className="p-3 rounded text-black"/>
+          <input name="title" value={form.title} onChange={handleChange} placeholder="Título" className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900"/>
 
-          <input name="price" type="number" value={form.price} onChange={handleChange} placeholder="Precio" className="p-3 rounded text-black"/>
+          <input name="price" type="number" value={form.price} onChange={handleChange} placeholder="Precio" className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900"/>
 
-          <input name="location" value={form.location} onChange={handleChange} placeholder="Ubicación" className="p-3 rounded text-black"/>
+          <input name="location" value={form.location} onChange={handleChange} placeholder="Ubicación" className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900"/>
 
-          <input name="rooms" type="number" value={form.rooms} onChange={handleChange} placeholder="Cuartos" className="p-3 rounded text-black"/>
+          <input name="rooms" type="number" value={form.rooms} onChange={handleChange} placeholder="Cuartos" className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900"/>
 
-          <input name="bathrooms" type="number" value={form.bathrooms} onChange={handleChange} placeholder="Baños" className="p-3 rounded text-black"/>
+          <input name="bathrooms" type="number" value={form.bathrooms} onChange={handleChange} placeholder="Baños" className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900"/>
 
-          <input name="m2const" type="number" value={form.m2const} onChange={handleChange} placeholder="m² construcción" className="p-3 rounded text-black"/>
+          <input name="m2const" type="number" value={form.m2const} onChange={handleChange} placeholder="m² construcción" className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900"/>
 
-          <input name="m2terr" type="number" value={form.m2terr} onChange={handleChange} placeholder="m² terreno" className="p-3 rounded text-black"/>
+          <input name="m2terr" type="number" value={form.m2terr} onChange={handleChange} placeholder="m² terreno" className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900"/>
 
-          <input name="parking" type="number" value={form.parking} onChange={handleChange} placeholder="Estacionamientos" className="p-3 rounded text-black"/>
+          <input name="parking" type="number" value={form.parking} onChange={handleChange} placeholder="Estacionamientos" className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900"/>
 
-          <select name="status" value={form.status} onChange={handleChange} className="p-3 rounded text-black">
+          <select name="status" value={form.status} onChange={handleChange} className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900">
             <option value="nueva">Nueva</option>
             <option value="usada">Usada</option>
             <option value="destacada">Destacada</option>
@@ -195,7 +195,7 @@ export default function EditProperty() {
 
         </div>
 
-        <textarea name="description" value={form.description} onChange={handleChange} placeholder="Descripción" className="p-3 rounded text-black"/>
+        <textarea name="description" value={form.description} onChange={handleChange} placeholder="Descripción" className="p-3 rounded border border-gray-800 bg-white text-black outline-none focus:border-amber-900"/>
 
         {/*  IMÁGENES EXISTENTES */}
         <div>
