@@ -69,7 +69,7 @@ export default function AdminContacts() {
 
                 <td className="p-4 text-black">{c.phone}</td>
 
-                <td className="p-4 max-w-xs truncate text-black">
+                <td className="p-4 max-w-xs whitespace-pre-wrap break-words text-black">
                   {c.message}
                 </td>
 
