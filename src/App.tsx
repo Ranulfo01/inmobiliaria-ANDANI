@@ -32,8 +32,8 @@ function App() {
         <Route
           path="/admin"
           element={
-            <AdminRoute> <AdminPanel /> </AdminRoute>    //se quita en lo que se realizan pruebas 
-            //<AdminPanel/>                              //se usa para localmente 
+           <AdminRoute> <AdminPanel /> </AdminRoute>    
+          
           }
         >
           {/*RUTA POR DEFECTO */}

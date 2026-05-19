@@ -43,16 +43,16 @@ export default function Footer() {
         <div>
           <h3 className="text-primary font-semibold mb-3">Contacto</h3>
           <ul className="space-y-2 text-sm">
-            <li>📍 Michoacán, México</li>
-            <li>📞 +52 443 328 8380</li>
-            <li>📧 contacto@inmobiliaria.com</li>
+            <li>📍 Morelia Michoacán, México</li>
+            <li>📞 +52 443 690 6986</li>
+            <li>📧 andanibienesraices@gmail.com</li>
           </ul>
         </div>
 
         <div className="flex space-x-4 mt-4 items-center">
-            <a href="#" className="hover:text-white">Facebook</a>
+            <a href="https://www.facebook.com/share/18VLGCsne3/" className="hover:text-white">Facebook</a>
             <a href="#" className="hover:text-white">Instagram</a>
-            <a href="#" className="hover:text-white">TikTok</a>
+            <a href="https://www.tiktok.com/@andanibienesraices?_r=1&_t=ZS-96ToDGbPSei" className="hover:text-white">TikTok</a>
             <a href="#" className="hover:text-white">YouTube</a>
         </div>
         <a href="https://wa.me/524433288380"

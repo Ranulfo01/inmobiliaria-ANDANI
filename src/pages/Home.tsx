@@ -75,7 +75,11 @@ const Home = () => {
       </h1>
 
       <h2 className="text-2xl font-serif text-textSecondary mb-10 text-center">
-        "Tu próximo capítulo comienza aquí"
+        "Tu próximo capítulo comienza aquí" <br/> <br/>
+        Bienvenido a <span className=" text-justify font-bold">ANDANI.</span> Creemos que una propiedad no es solo un espacio, 
+        sino el escenario donde se construyen tus mejores momentos. Por eso, hemos seleccionado minuciosamente residencias 
+        exclusivas que combinan arquitectura de vanguardia, confort y la más alta plusvalía. <br/>
+        Estás a un paso de estrenar el hogar que refleja tu éxito. Permítenos guiarte a tu próximo destino.
       </h2>
 
       {/* LOADING */}
@@ -88,7 +92,7 @@ const Home = () => {
       {/* DESTACADAS */}
       <div>
         <h2 className="text-2xl font-serif text-textSecondary mb-4 text-center">
-          Casas destacadas de la semana
+          Selección Premium del Mes
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -121,7 +125,7 @@ const Home = () => {
       {/* TESTIMONIOS */}
       <div className="mt-20">
         <h2 className="text-2xl font-serif text-textSecondary mb-6 text-center">
-          Testimonios de clientes
+          Testimonios de clientes de Andani
         </h2>
 
         <TestimonialCarousel />
