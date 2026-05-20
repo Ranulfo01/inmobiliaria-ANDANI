@@ -125,8 +125,8 @@ export default function Contact() {
 
           <div className="space-y-3 text-sm">
             <p>📍 Morelia, Michoacán</p>
-            <p>📞 443 328 8380</p>
-            <p>✉ contacto@andani.com</p>
+            <p>📞 443 690 6986</p>
+            <p>✉ andanibienesraices@gmail.com</p>
           </div>
         </div>
 

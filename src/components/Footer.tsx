@@ -44,7 +44,7 @@ export default function Footer() {
           <h3 className="text-primary font-semibold mb-3">Contacto</h3>
           <ul className="space-y-2 text-sm">
             <li>📍 Morelia Michoacán, México</li>
-            <li>📞 +52 443 690 6986</li>
+            <li>📞 443 690 6986</li>
             <li>📧 andanibienesraices@gmail.com</li>
           </ul>
         </div>
@@ -66,6 +66,7 @@ export default function Footer() {
       {/* LINEA INFERIOR */}
       <div className="border-t border-gray-700 text-center py-4 text-sm text-gray-400">
         © {new Date().getFullYear()} Andani Bienes Raices — Todos los derechos reservados
+        <Link to="PrivacyPolicy" className="hover:text-white"> Politica de Privacidad</Link>
       </div>
 
     </footer>

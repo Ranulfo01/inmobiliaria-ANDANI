@@ -13,6 +13,7 @@ import EditProperty from "./pages/EditProperty";
 import AdminContacts from "./pages/AdminContacts";
 import AdminRoute from "./routes/AdminRoute";
 import AdminProperties from "./pages/AdminProperties";
+import PoliticaPrivacidad from "./pages/Privacy";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/properties" element={<Properties />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/PrivacyPolicy" element={<PoliticaPrivacidad />} />
 
         {/* ADMIN */}
         <Route

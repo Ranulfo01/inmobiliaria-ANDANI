@@ -57,7 +57,7 @@ export default function Properties() {
 
         <input
           type="text"
-          placeholder="Ciudad"
+          placeholder="Ubicación"
           className="border p-3 rounded text-black"
           value={city}
           onChange={(e) => setCity(e.target.value)}
