@@ -13,7 +13,7 @@ export default function AdminProperties() {
   // TRAER PROPIEDADES
   const fetchProperties = async () => {
     try {
-      const res = await fetch(`${API}/properties`);
+      const res = await fetch(`${API}/api/properties`);
       const data = await res.json();
       setProperties(data);
     } catch (err) {
