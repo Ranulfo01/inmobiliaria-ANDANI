@@ -73,14 +73,31 @@ const Home = () => {
       <h1 className="text-4xl font-bold text-textSecondary mb-10 text-center">
         ANDANI Tu mejor aliado en la adquisición de una propiedad.
       </h1>
+      {/* Escritorio*/}
 
-      <h2 className="text-2xl font-serif text-textSecondary mb-10 text-center">
-        "Tu próximo capítulo comienza aquí" <br/> <br/>
+      <h2 className="hidden md:block text-2xl font-serif text-textSecondary mb-10 text-center">
+        "Tu próximo capítulo comienza aquí" 
+        <br/> 
+        <br/>
         Bienvenido a <span className=" text-justify font-bold">ANDANI.</span> Creemos que una propiedad no es solo un espacio, 
         sino el escenario donde se construyen tus mejores momentos. Por eso, hemos seleccionado minuciosamente residencias 
-        exclusivas que combinan arquitectura de vanguardia, confort y la más alta plusvalía. <br/>
-        Estás a un paso de estrenar el hogar que refleja tu éxito. Permítenos guiarte a tu próximo destino.
+        exclusivas que combinan arquitectura de vanguardia, confort y la más alta plusvalía. 
+        <br/> 
+        <br/> 
+        Estás a un paso de estrenar el hogar que refleja tu éxito, permítenos guiarte a tu próximo destino.
       </h2>
+
+       {/*CELULAR*/}
+       <h2 className="bock md:hidden text-lg font-serif text-textSecondary mb-8 text-center leading-8 px-">
+        "Tu próximo capitulo comienza aqui"
+        <br/>
+        Bienvenido a <span className="font-bold">ANDANI </span>
+        Descubre propiedades exclusivas diseñadas para brindar confort, estilo y alta plusvalía.
+        <br/>
+        <br/>
+        Tu nuevo hogar te espera.
+       </h2>
+
 
       {/* LOADING */}
       {loading && (
