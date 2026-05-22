@@ -15,7 +15,7 @@ export default function PropertyDetail() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    fetch(`${API}/properties/${id}`)
+    fetch(`${API}/api/properties/${id}`)
       .then(res => res.json())
       .then(data => {
         setProperty(data);
