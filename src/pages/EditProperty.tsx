@@ -132,7 +132,7 @@ export default function EditProperty() {
     }
 
     try {
-      const res = await fetch(`${API}/properties/${id}`, {
+      const res = await fetch(`${API}/api/properties/${id}`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`
