@@ -50,7 +50,7 @@ export default function EditProperty() {
   useEffect(() => {
     const fetchProperty = async () => {
       try {
-        const res = await fetch(`${API}/properties/${id}`);
+        const res = await fetch(`${API}/api/properties/${id}`);
         const data = await res.json();
 
         setForm({

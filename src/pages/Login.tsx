@@ -10,7 +10,7 @@ export default function Login() {
 
   const handleLogin = async () => {
     try {
-      const res = await fetch(`${API}/auth/login`, {
+      const res = await fetch(`${API}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

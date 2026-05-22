@@ -51,7 +51,7 @@ const Home = () => {
     if (!confirmDelete) return;
 
     try {
-      await fetch(`${API}/properties/${id}`, {
+      await fetch(`${API}/api/properties/${id}`, {
         method: "DELETE"
       });
 

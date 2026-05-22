@@ -78,7 +78,7 @@ export default function Contact() {
     setLoading(true)
 
     try {
-      const res = await fetch(`${API}/contact`, {
+      const res = await fetch(`${API}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -33,14 +33,14 @@ export default function CreateProperty() {
   //  IMÁGENES
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      //console.log("IMÁGENES SELECCIONADAS:", e.target.files);
+      
       setImages(e.target.files);
     }
   };
 
   //  SUBMIT
   const handleSubmit = async (e: React.FormEvent) => {
-    //console.log(" SUBMIT EJECUTADO");
+    
     e.preventDefault();
     setLoading(true);
 
@@ -61,9 +61,9 @@ export default function CreateProperty() {
     try {
 
       const token = localStorage.getItem("token");
-          //console.log(token);
+          
 
-      const res = await fetch(`${API}/properties`, {
+      const res = await fetch(`${API}/api/properties`, {
         method: "POST",
         headers:{
           Authorization: `Bearer ${token}`
@@ -75,7 +75,7 @@ export default function CreateProperty() {
 
       // debug real
       const text = await res.text();
-      //console.log(" RESPUESTA BACKEND:", text);
+     
 
       if (!res.ok) {
         throw new Error(text);
