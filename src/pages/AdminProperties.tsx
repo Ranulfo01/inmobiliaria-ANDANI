@@ -35,7 +35,7 @@ export default function AdminProperties() {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch(`${API}/properties/${id}`, {
+      const res = await fetch(`${API}/api/properties/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`, 
