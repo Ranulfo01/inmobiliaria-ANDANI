@@ -28,7 +28,7 @@ export default function Navbar() {
         {/* LOGO */}
         <div className="flex items-center space-x-3 group">
           <img
-            src="https://res.cloudinary.com/dhkh3ixfd/image/upload/v1776739294/andani/xk0udwi1qjrzowktjlh5.jpg"
+            src="https://res.cloudinary.com/dhkh3ixfd/image/upload/v1779941419/andani/lvu1ipqgbbtvqwe2yyyu.png"
             alt="Logo Empresa"
             className="w-10 h-10 rounded-full object-cover border-2 border-amber-400 group-hover:scale-110 transition-transform duration-300"
           />
