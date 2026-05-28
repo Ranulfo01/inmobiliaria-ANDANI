@@ -65,7 +65,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-4 ml-4 pl-4 border-l border-zinc-700">
             {!user ? (
               <Link to="/login" className="bg-amber-500 hover:bg-amber-600 text-black px-5 py-2 rounded-full font-bold transition-all transform hover:scale-105">
-                Iniciar Secíon
+                Iniciar Sesíon
               </Link>
             ) : (
               <>

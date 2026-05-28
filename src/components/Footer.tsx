@@ -15,7 +15,7 @@ export default function Footer() {
             Encuentra la casa de tus sueños. <br/> 
             ¿Quieres vender tu propiedad?, <br/>
             Nosotros te acompañamos en todo el proceso. <br/>
-             ¡No estas solo!.
+             ¡No estáss solo!.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export default function Footer() {
       {/* LINEA INFERIOR */}
       <div className="border-t border-gray-700 text-center py-4 text-sm text-gray-400">
         © {new Date().getFullYear()} Andani Bienes Raices — Todos los derechos reservados
-        <Link to="PrivacyPolicy" className="hover:text-white"> Politica de Privacidad</Link>
+        <Link to="PrivacyPolicy" className="hover:text-white"> Política de Privacidad</Link>
       </div>
 
     </footer>
