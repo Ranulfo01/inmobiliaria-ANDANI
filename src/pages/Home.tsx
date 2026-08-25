@@ -111,12 +111,13 @@ const Home = () => {
             exclusivas que combinan arquitectura de vanguardia, confort y la más alta plusvalía. 
             <br/> 
             <br/> 
-            Estás a un paso de estrenar el hogar que refleja tu éxito, permítenos guiarte a tu próximo destino.
+            <span className="font-bold">Andani</span> es una empresa Moreliana conformada por profesionales con más de <span className="font-bold">11 años de experiencia</span> en el mercado de 
+                bienes raices.
           </h2>
 
           {/*CELULAR*/}
           <h2 className="bock md:hidden text-lg font-serif text-textSecondary mb-8 text-center leading-8 px-">
-            "Tu próximo capitulo comienza aqui"
+            "¿Sabes si es buen momento para <span className="font-bold">VENDER</span> tu propiedad?"
             <br/>
             Bienvenido a <span className="font-bold">ANDANI </span>
             Descubre propiedades exclusivas diseñadas para brindar confort, estilo y alta plusvalía.
