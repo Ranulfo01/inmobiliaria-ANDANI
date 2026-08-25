@@ -46,11 +46,11 @@ export default function Services() {
         <p className="text-gray-500 max-w-2xl mx-auto">
           Soluciones inmobiliarias diseñadas para ayudarte a vender, rentar o invertir con seguridad.
         </p>
-        <h2 className="hidden md:block text-1xl font-serif text-textSecondary mb-10 text-center">Nosotros sabemos la importancia de <span className="font-bold">cuidar su patrimonio,</span> una de nuestras prioridades
+        <h2 className="hidden md:block text-2xl font-serif text-textSecondary mb-10 text-center">Nosotros sabemos la importancia de <span className="font-bold">cuidar su patrimonio,</span> una de nuestras prioridades
         es obtener <span className="font-bold">la mejor propuesta</span> por su propiedad. <br/>
         Le ofrecemos un <span className="font-bold">servicio de acompañamiento confidencial,</span> cuidamos su privacidad
-        en todo momento. Para poder lograr una <span className="font-bold">venta exitosa,</span>le brindamos <span>asesoria legal</span>
-        y de toda la documentación que se requiera. </h2>
+        en todo momento. Para poder lograr una <span className="font-bold">venta exitosa,</span> le brindamos <span>asesoria legal </span>
+        de toda la documentación que se requiera. </h2>
       </section>
 
       {/* SERVICIOS */}
